@@ -1,0 +1,191 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Home Remedies</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Course Project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrapmin.css' %}">
+<link href="{% static 'css/fontawesomeall.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/owlcarousel.css'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/main_styles.css' %}">
+
+<style>
+    
+    .dropdown{
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+    }
+    button{
+        position:relative;
+        width:200px;
+        height:60px;
+        font-size: 24px;
+        background: #2196f3;
+        border: none;
+        box-shadow:none;
+        outline:none;
+        cursor: pointer;
+        color:#fff;
+    }
+    ul{
+        position: absolute;
+        margin:0;
+        padding: 0;
+        width:100%;
+        background:#ccc;
+        transform-origin: top;
+        transform: perspective(1000px) rotateX(-90deg);
+        transition: 0.5s;
+    }
+    ul.active{
+        transform: perspective(1000px) rotateX(0deg);
+    }
+    ul li{
+        list-style:none;
+    }
+    ul li a {
+        display:block;
+        padding:10px;
+        text-align: center;
+        text-decoration: none;
+        background: #262626;
+        color: #fff;
+        border-bottom: 1px solid rgba(0,0,0,.2);
+        transition: 0.5s;
+    }
+    ul li a:hover{
+        background: #0d7ad0
+    }
+</style>
+</head>
+<body>
+
+        <div class="super_container">
+
+                <!-- Header -->
+              
+                <header class="header d-flex flex-row">
+                  <div class="header_content d-flex flex-row align-items-center">
+                    <!-- Logo -->
+                    <div class="logo_container">
+                      <div class="logo">
+                        <img src="{% static 'css/images/logo.png' %}" alt="">
+                        <span>HOME REMEDIES</span>
+                      </div>
+                    </div>
+                    <div class="main_nav">
+                        <ul class="main_nav_list">
+                            <li class="main_nav_item"><a href={% url 'home' %} style="padding-left:40px;">home</a></li>
+                    <li class="nav-item dropdown" style="padding-left:400px;">
+                        <a style="background-color: navy; color: white; border: 2px solid #008CBA;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          {{user.username}}
+                        </a>
+                        <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="{% url 'password_change' %}">change password</a>									  <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="{% url 'logout' %}">Log Out</a>
+                        </div>
+                        </li>
+                      </ul>
+                            
+                    </div>
+              
+                    <!-- Main Navigation -->
+                  </div>
+                  <div class="header_side d-flex flex-row justify-content-center align-items-center">
+                    <img src="{% static 'css/images/phone-call.svg' %}" alt="">
+                    <span>+43 4566 7788 2457</span>
+                  </div>
+              
+                  <!-- Hamburger -->
+                  <div class="hamburger_container">
+                    <i class="fas fa-bars trans_200"></i>
+                  </div>
+              
+                </header>
+                
+                <!-- Menu -->
+                <div class="menu_container menu_mm">
+              
+                  <!-- Menu Close Button -->
+                  <div class="menu_close_container">
+                    <div class="menu_close"></div>
+                  </div>
+              
+                  <!-- Menu Items -->
+              
+                </div>
+	
+	<!-- Home -->
+
+	<div class="home">
+		<div class="home_background_container prlx_parent">
+                <img style="height:500px; width:100%"src="{% static 'css/images/home-r.jpg' %}">
+			<!-- <div class="home_background prlx" style="background-image:url(images/contact_background.jpg)"></div> -->
+        </div>
+        <br>
+
+    <h1 style="font-family: cursive;text-align: center;color: black ;">Choose your problem here!</h1>
+
+    </div>
+    <br>
+    <br>
+    <br>
+
+	<!-- Contact --->
+	<div class="contact">
+		<div class="container">
+			<div class="row"  style="margin-bottom: 500px;">
+                    <div class="dropdown">
+                        <button style="width:300px;">Problems</button>
+                        <ul style="font-size: 20px;">
+                            <!-- <li><a href="#" >Headiche</a></li>
+                            <li><a href="#">Backpain</a></li>
+                            <li><a href="#">Pimples</a></li>
+                            <li><a href="#">Sprain</a></li>
+                            <li><a href="#">Hairfall</a></li>
+                            <li><a href="#">Weight Control</a></li>
+                            <li><a href="#">Injuries</a></li>
+                            <li><a href="#">Stop Clotting</a></li>
+                            <li><a href="#">Step on glass pieces</a></li> -->
+                            <!-- {% for solution in all_solutions %}
+                            <a href="/homeremedies/{{ solutions.id }}/">{{ solution.disease }}</a>   
+                        {% endfor %} -->
+
+                        {% for solutions in all_solutions %}
+                        <li><a  href="/homeremedies/{{ solutions.id }}/" style="text-align: center;">{{ solutions.disease }}</a></li>                    {% endfor %}
+                         </ul>
+                  </div>
+                
+                  <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
+                  <script type="text/javascript">
+                      $(document).ready(function(){
+                          $('button').click(function(){
+                              $('ul').toggleClass('active')
+                          })
+                      })
+                    
+                  </script>
+						
+				</div>
+
+        </div>
+    </div>
+
+	<!-- Footer -->
+
+    </div>
+
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/ScrollMagic.min.js' %}"></script>
+    <script src="{% static 'js/owlcarousel.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>

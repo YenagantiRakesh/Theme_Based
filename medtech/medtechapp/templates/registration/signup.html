@@ -1,0 +1,142 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Course - Contact</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Course Project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrapmin.css' %}">
+<link href="{% static 'css/fontawesomeall.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/owlcarousel.css'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/main_styles.css' %}">
+<style>
+        body{
+        background:url(http://pluspng.com/img-png/hospital-png-hd-images-hospital-management-system-1920.png);
+        background-size: 1500px 700px;
+        margin-top:0px;    
+    }
+    .card{
+    background:rgba(0,0,0,0.05);
+    padding-left:0px;
+    background-color:navy;
+}
+
+.col-6{
+    float:left;
+    padding-left:300px;
+}
+.container1{
+    padding-right:300px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="super_container">
+<header class="header d-flex flex-row">
+		<div class="header_content d-flex flex-row align-items-center">
+			<!-- Logo -->
+			<div class="logo_container">
+				<div class="logo">
+                        <img src="{% static 'css/images/logo.png' %}" alt="">
+
+					<span>LogIn Here</span>
+				</div>
+            </div>
+            <nav class="main_nav_container">
+                    <div class="main_nav">
+                        <ul class="main_nav_list">
+    
+                            <li class="main_nav_item"><a href="{% url 'home' %}">home</a></li>
+                            {% if user.is_authenticated %}
+                                
+                                <li class="main_nav_item"><a href="#services">Services</a></li>
+                                <!-- <li class="main_nav_item"><a href="{% url 'password_change' %}">change password</a></li>							
+                                <li class="main_nav_item"><a href="{% url 'logout' %}">Log Out</a></li> -->
+                                <!-- <strong style="color:teal;">Your logged in as {{user.username}}</strong> -->
+                                <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          {{user.username}}
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
+                                          <a class="dropdown-item" href="{% url 'password_change' %}">change password</a>									  <div class="dropdown-divider"></div>
+                                          <a class="dropdown-item" href="{% url 'logout' %}">Log Out</a>
+                                        </div>
+                                      </li>
+    
+                            {% else %}
+                                <li class="main_nav_item"><a href={% url 'signup' %}>Sign Up</a></li>
+                        
+                            {% endif %}
+                        </ul>
+                        
+                    </div>
+                </nav>
+
+			<!-- Main Navigation -->
+		</div>
+		<div class="header_side d-flex flex-row justify-content-center align-items-center">
+			<img src="{% static 'css/images/phone-call.svg' %}" alt="">
+			<span>+43 4566 7788 2457</span>
+		</div>
+
+		
+
+    </header>
+    <br>
+    <br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <br>
+    <br>
+    <br>
+
+
+
+
+
+
+
+
+    <div class="container1">
+            <div class="row justify-content-center">
+                <div class="col-6"  style=" border-style:groove; padding:10px;background-color: white;">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="rev">
+                            <br>
+                            <h2>signup</h2>
+                            <form method="post">
+                                {% csrf_token %}
+                                {{ form.as_p}}
+                                <button type="submit">Signup</button>
+                            </form> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- </div> -->
+       </div>
+    
+
+</div>
+
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'js/ScrollMagic.min.js' %}"></script>
+<script src="{% static 'js/owlcarousel.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+<script src="{% static 'js/popper.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+
+</body>
+</html>

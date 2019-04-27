@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Home Remedies</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Course Project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrapmin.css' %}">
+<link href="{% static 'css/fontawesomeall.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/owlcarousel.css'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/main_styles.css' %}">
+    <style>
+        table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+        th{
+          font-size: 20px;
+        }
+
+        th, td {
+          padding: 5px;
+          text-align: left; 
+          color:white;   
+        }
+    body{
+    /* background:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8PDxAPDQ0NDQ0PEBANDQ0NDQ8NDQ0NFRIWFhURFRUYHSggGBolGxUVITEhJSkrLi4uFx8zOD8tNygtLisBCgoKDQ0NFQ0NDy0ZFR0rKy0rKy0tKysrKy0tKysrKysrKy0tKysrLSstKysrKysrKysrKysrKysrKysrKysrK//AABEIALEBHAMBIgACEQEDEQH/xAAYAAADAQEAAAAAAAAAAAAAAAAAAQIDB//EACUQAQEBAQEAAQMEAgMAAAAAAAABAhEhMQMSwUFxgbFRkULR8P/EABgBAQEBAQEAAAAAAAAAAAAAAAABAgQD/8QAFhEBAQEAAAAAAAAAAAAAAAAAABEB/9oADAMBAAIRAxEAPwDjHDHDkd0eaVcFiuLBPFcHFcWIjh8PipCDLg4uwpEgXBYrh2LBMhcXILCCZBYvhahBPCsacLUII4JFcPhBHBIvgzCCeCRfBmEEWCRdgkIM7C401E8IJkPiuCRIIkLi5C4QTwqvhWJFLhcXYOEBw+Hw5GkTYvhai7FRPFcEi5Fgz4qQ+erkIMLBxdnychBPBqLkPUIIzPBxpJ4UiwTIWstZC1CIz+0anrWZTrPpFYyKmVSKkSCOeFiNft8LEWCLBIvh8IIuSkaagkIMtRPG28o56m4IkORUhyEGUnpcaSep4kE8LUXwtRIpWEuwuAIuRK4uImxdia0UKRpwsxfGkZyetJkpFyAy+0fa1zPU2ekCzkay0xPBuKM5nwSNczwZyREzPwjUb8+P2RvIFMp1n1rIVnoMbjh5y0+?pBiekEXJYy1sLEBnMqzOxf2qmfn9wY7gzGm8lnIM95Tcfq10Wp4kVlIr7Tk+FWAw56njTnqeIpcRqNOI0mhWCQ6ICWkZtMmAsacQ1i4gzGnEry0iZP7acTme/y1gM8wrPVyFYoMTwayvEVuAzznyHM/K8zxWsgmZ8n7M9RrE6n9AJEWetuJ1PQZ7gxPT2eJ6BXJYz8tbPCxPwCPtVnPz+67nxIiN5LM/LTc/sZn5FZbhanjTURsGU/RVgiuIMJPUVr+rOopI01iNRBNhRRVFQ1wyjXBgdaxnWsaxB/lWU8+V5iorPz/K0Z/K1BE1cTQVhp9SeIw0+r8QQZ+P9jf6HieFufCic/P8AJWf0eZ6L+EDqaup4CNFg9DArXnhfT/6V/wAU/Tn4VD38Ivy038Is9AtHBo4gz0jbSxGxWf6qyni8oMp8sa2/VlU1RE7VE7QKo18rqNfKaqY1yyjSGCmuaxtadaRf+V5Rmteqgz8/y1jGX3+WkqhxNGaL8gvHwraMfA3RGmb5/wC/yev0Z5vkP7vlRWfn/Za/CpfP4Z6oNai/Jyot9QLR/TLYx8itL8Fi/grS+nr5VGlviaXVZvz+6Bb/ACeb5/tO7/ZZv5A9/oz2r6lTr4FZqT/g6gznyzq5fUVFERpSN1NDRTtSipjSVlGmamCq0Y2tLWhpmtesJfhr1UErXrCX1rmqh5vpW+pmvS+70G2L4W040N1Reb4eazzfBNfIN+/H7M9305ryM9UG0qbfRmo3r0FfUoxfWe99POgaWl9OlrSfp0F9X3+2M16rF8v7grdLOkboxQVqp3fB9TX9o1rziAl+FaZy/CrQR+rOq76jqKrvjPaus91NU9JGqXWREq5WcqpUxWlrSsbWnWsRea0lYSrlVF99XNMe+qlUFvyJUWiVKNZpWqy+4aq0a5vgzpGb4XQbTXx+xbrOa+BrRRrNJ3fUTRavpQ5VSsZVTRRr93gxfln3wYpRfVfd/bK05oGm74WdI1opoov6mmdvo3Ud9TdFyqlZSnKUOX1Fol9T1FPqd0dTqpoekHU9TVTFSo6qV); */
+    /* background:url(http://sfwallpaper.com/images/hd-website-backgrounds-9.jpg); */
+    background-size: 1500px 700px;
+    margin-top:0px;  
+    background-image: url(https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-028.jpg);
+
+    }
+    .card{
+    background:rgba(0,0,0,0.2);
+    padding-left:10px;
+    /* background-color:lightblue; */
+    /* background-image: url(https://images.pexels.com/photos/953214/pexels-photo-953214.jpeg?cs=srgb&dl=backgrounds-blank-blue-953214.jpg&fm=jpg); */
+}
+</style>
+</head>
+<body>
+
+
+    <div class="super_container">
+
+        <!-- Header -->
+      
+        <header class="header d-flex flex-row">
+          <div class="header_content d-flex flex-row align-items-center">
+            <!-- Logo -->
+            <div class="logo_container">
+              <div class="logo">
+                <img src="{% static 'css/images/logo.png' %}" alt="">
+                <span>HOME REMEDIES</span>
+              </div>
+            </div>
+            <div class="main_nav">
+                <ul class="main_nav_list">
+                    <li class="main_nav_item"><a href={% url 'home' %} style="padding-left:40px;">home</a></li>
+            <li class="nav-item dropdown" style="padding-left:400px;">
+                <a style="background-color: navy; color: white; border: 2px solid #008CBA;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{user.username}}
+                </a>
+                <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{% url 'password_change' %}">change password</a>									  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="{% url 'logout' %}">Log Out</a>
+                </div>
+                </li>
+              </ul>
+					
+            </div>
+      
+            <!-- Main Navigation -->
+          </div>
+          <div class="header_side d-flex flex-row justify-content-center align-items-center">
+            <img src="{% static 'css/images/phone-call.svg' %}" alt="">
+            <span>+43 4566 7788 2457</span>
+          </div>
+      
+          <!-- Hamburger -->
+          <div class="hamburger_container">
+            <i class="fas fa-bars trans_200"></i>
+          </div>
+      
+        </header>
+        
+        <!-- Menu -->
+        <div class="menu_container menu_mm">
+      
+          <!-- Menu Close Button -->
+          <div class="menu_close_container">
+            <div class="menu_close"></div>
+          </div>
+      
+          <!-- Menu Items -->
+      
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+<div class="card" >
+<table style="width:70%;height:10%; margin-left:200px;">
+    <tr>
+      <th>Disease name:</th>
+      <th>Ingredients</th> 
+      <th>pictures</th>
+    </tr>
+    <tr>
+        <td rowspan="3"><h2>{{solutions.disease}}</h2></td>
+        <td>{{solutions.sol1}}</td>
+        <td ><img src="{{solutions.pic1}}" style="width:250px;height:250px;"></td>
+
+    </tr>
+    <tr>
+        <td>{{solutions.sol2}}</td>
+        <td ><img src="{{solutions.pic2}}"style="width:250px;height:250px;"></td>
+
+    </tr>
+    <tr>
+        <td>{{solutions.sol3}}</td>
+        <td ><img src="{{solutions.pic3}}"style="width:250px;height:250px;"></td>
+
+    </tr>
+ 
+
+    <!-- <tr>
+      <td ><h2>{{solutions.disease}}</h2></td>
+      <td rowspan="3">{{solutions.sol1}}
+      </td>
+      <td rowspan="3"><img src="{{solutions.pic1}}"></td>
+    </tr> -->
+  </table>
+  </div>
+  <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'js/ScrollMagic.min.js' %}"></script>
+<script src="{% static 'js/owlcarousel.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+<script src="{% static 'js/popper.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+  </body>
+  </html>

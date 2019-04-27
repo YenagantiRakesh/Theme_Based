@@ -1,0 +1,37 @@
+
+{% load static%}
+
+
+<html>
+    <head>
+        <style>
+            
+/*
+            .tq{
+                padding-left: 150px;
+                font-family: cursive;
+            }
+*/
+            .token{
+                text-align: center;
+                font-family:sans-serif;
+            }
+            img{
+                height:460px;
+                padding-left:300px;
+            }
+            h1{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="image">
+            <h1 class="tq">THANK YOU!</h1>
+         
+            <h2 class="token">{{user.username}} Your appointment has been registered and token has been generated,and your token number is {{token}}!</div></h2>
+            <h2 style="text-align:center;">You are expected to come to hospital at {{ now_plus_10 }}</h2>
+          <img src="{% static 'css/images/tickmark4.jpg' %}">
+        </div>
+    </body>
+</html>

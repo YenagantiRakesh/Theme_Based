@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Home Remedies</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Course Project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrapmin.css' %}">
+<link href="{% static 'css/fontawesomeall.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/owlcarousel.css'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/main_styles.css' %}">
+
+
+
+<style>
+    p,h2{
+        color:black;
+    }
+</style>
+</head>
+  <body>
+
+
+
+        <div class="super_container">
+
+                <!-- Header -->
+              
+                <header class="header d-flex flex-row">
+                  <div class="header_content d-flex flex-row align-items-center">
+                    <!-- Logo -->
+                    <div class="logo_container">
+                      <div class="logo">
+                        <img src="{% static 'css/images/logo.png' %}" alt="">
+                        <span>ORGAN DONATION</span>
+                      </div>
+                    </div>
+                    <div class="main_nav">
+                        <ul class="main_nav_list">
+                            <li class="main_nav_item"><a href={% url 'home' %} style="padding-left:40px;">home</a></li>
+                    <li class="nav-item dropdown" style="padding-left:400px;">
+                        <a style="background-color: navy; color: white; border: 2px solid #008CBA;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          {{user.username}}
+                        </a>
+                        <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="{% url 'password_change' %}">change password</a>									  <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="{% url 'logout' %}">Log Out</a>
+                        </div>
+                        </li>
+                      </ul>
+                            
+                    </div>
+              
+                    <!-- Main Navigation -->
+                  </div>
+                  <div class="header_side d-flex flex-row justify-content-center align-items-center">
+                    <img src="{% static 'css/images/phone-call.svg' %}" alt="">
+                    <span>+43 4566 7788 2457</span>
+                  </div>
+              
+                  <!-- Hamburger -->
+                  <div class="hamburger_container">
+                    <i class="fas fa-bars trans_200"></i>
+                  </div>
+              
+                </header>
+                
+                <!-- Menu -->
+                <div class="menu_container menu_mm">
+              
+                  <!-- Menu Close Button -->
+                  <div class="menu_close_container">
+                    <div class="menu_close"></div>
+                  </div>
+              
+                  <!-- Menu Items -->
+              
+                </div>
+	
+	<!-- Home -->
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+
+        {% for i in donators %}
+        <div class="jumbotron" style="padding:30px;margin:50px;background-color:gold;">
+            <div class="container">
+            <div class="row">
+                <div class="col-lg" style="font-size: 20px;text-align:center;padding:40px;border: black;">
+                        <h2>   Donor  {{ forloop.counter }} details :</h2>
+                </div>
+                <div class="col-lg">
+                        <p><b>Donor name          : </b>{{ i.user }}</p>
+                        <p><b>Gender              : </b>{{ i.gender }}</p>
+                        <p><b>BirthDay Date       : </b>{{ i.birth }}</p>
+                        <p><b>Address             : </b>{{ i.address }}</p>
+                        <p><b>Mobile Number       : </b>{{ i.mobile_no }}</p>
+                        <p><b>Pincode             : </b>{{ i.pincode }}</p>
+                        <p><b>Organs For Donation : </b>{{ i.organs }}</p>
+                        <p><b>Blood Group         : </b>{{ i.blood_group }}</p>
+                        <img style="height:200px;" src="{{ i.myfile.url }}" alt="img"><br>
+                </div>
+            </div>
+            </div>
+        </div>
+        {% endfor %}
+        
+            
+        <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+        <script src="{% static 'js/ScrollMagic.min.js' %}"></script>
+        <script src="{% static 'js/owlcarousel.js' %}"></script>
+        <script src="{% static 'js/custom.js' %}"></script>
+        <script src="{% static 'js/popper.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    </body>
+    </html>

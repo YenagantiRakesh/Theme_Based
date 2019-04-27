@@ -1,0 +1,142 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Course - Contact</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Course Project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrapmin.css' %}">
+<link href="{% static 'css/fontawesomeall.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/owlcarousel.css'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/main_styles.css' %}">
+
+<style>
+    body{
+    /* background:url(http://pluspng.com/img-png/hospital-png-hd-images-hospital-management-system-1920.png); */
+    background-size: 1500px 700px;
+    margin-top:0px;  
+    background:url(http://www.freeppt.net/background/Vibrant_and_Effective_ppt_background.jpg); 
+    /* background:url(https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80 750w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80 1050w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80 1350w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80 1500w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80 1650w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80 1950w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80 2100w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80 2250w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80 2550w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=2700&q=80 2700w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80 2850w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=3150&q=80 3150w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=3300&q=80 3300w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=3450&q=80 3450w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=3750&q=80 3750w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=3900&q=80 3900w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=4050&q=80 4050w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=4350&q=80 4350w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=4500&q=80 4500w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=4650&q=80 4650w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=4950&q=80 4950w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=5100&q=80 5100w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=5250&q=80 5250w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=5550&q=80 5550w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=5700&q=80 5700w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=5850&q=80 5850w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=6000&q=80 6000w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=6000&q=80 6000w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=6000&q=80 6000w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=6000&q=80 6000w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=6000&q=80 6000w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=6000&q=80 6000w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=6000&q=80 6000w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=6000&q=80 6000w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=6000&q=80 6000w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=6000&q=80 6000w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=6000&q=80 6000w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=6000&q=80 6000w); */
+}
+.card{
+    background:rgba(0,0,0,0.2);
+    padding-left:10px;
+    padding-bottom: 50px;
+    background-color:black;
+}
+.col-6{
+    float:left;
+}
+.container1{
+    padding-right:600px;
+    padding-bottom: 300px;
+}
+
+
+
+</style>
+
+</head>
+<body>
+        <div class="super_container">
+
+                <!-- Header -->
+            
+                <header class="header d-flex flex-row">
+                    <div class="header_content d-flex flex-row align-items-center">
+                        <!-- Logo -->
+                        <div class="logo_container">
+                            <div class="logo">
+                                    <img src="{% static 'css/images/logo.png' %}" alt="">
+            
+                                <span>LogIn Here</span>
+                            </div>
+                        </div>
+                        <nav class="main_nav_container">
+                                <div class="main_nav">
+                                    <ul class="main_nav_list">
+                
+                                        <!-- <li class="main_nav_item"><a href="{% url 'home' %}">home</a></li> -->
+                                        {% if user.is_authenticated %}
+                                            
+                                            <!-- <li class="main_nav_item"><a href="#services">Services</a></li> -->
+                                            <!-- <li class="main_nav_item"><a href="{% url 'password_change' %}">change password</a></li>							
+                                            <li class="main_nav_item"><a href="{% url 'logout' %}">Log Out</a></li> -->
+                                            <!-- <strong style="color:teal;">Your logged in as {{user.username}}</strong> -->
+                                            <li class="nav-item dropdown">
+                                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                      {{user.username}}
+                                                    </a>
+                                                    <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
+                                                      <a class="dropdown-item" href="{% url 'password_change' %}">Change Password</a>									  <div class="dropdown-divider"></div>
+                                                      <a class="dropdown-item" href="{% url 'logout' %}">Log Out</a>
+                                                    </div>
+                                                  </li>
+                
+                                        {% else %}
+                                            <li class="main_nav_item"><a href={% url 'signup' %}>Sign Up</a></li>
+                                    
+                                        {% endif %}
+                                    </ul>
+                                    
+                                </div>
+                            </nav>
+            
+                        <!-- Main Navigation -->
+                    </div>
+                    <div class="header_side d-flex flex-row justify-content-center align-items-center">
+                        <img src="{% static 'css/images/phone-call.svg' %}" alt="">
+                        <span>+43 4566 7788 2457</span>
+                    </div>
+            
+                    
+            
+                </header>
+            
+                <br>
+                <br>
+            
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                
+                <br>
+                <br>
+                <br>
+    <h1 style="padding-left:100px;color:teal;">Doctors Page</h1>
+<div class="container1">
+        <div class="row justify-content-center">
+            <div class="col-6"  style=" border-style:groove; padding:10px;background-color: white;">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="rev">
+                        <br>
+<form method="post" action="/doctordisplay/">
+    {% csrf_token %}
+    <p>Enter hospital name: <input type="text" name="dochname"></p>
+    <input type="submit" value="Search">
+</form>
+</div>
+</div>
+</div>
+</div>
+<!-- </div> -->
+</div>
+
+
+</div>
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'js/ScrollMagic.min.js' %}"></script>
+<script src="{% static 'js/owlcarousel.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+<script src="{% static 'js/popper.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+
+</body>
+</html>

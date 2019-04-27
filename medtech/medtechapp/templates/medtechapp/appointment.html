@@ -1,0 +1,180 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Appointment</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Course Project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrapmin.css' %}">
+<link href="{% static 'css/fontawesomeall.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static  'css/courses_styles.css' %}">
+<!-- <link rel="stylesheet" type="text/css" href="{% static 'css/courses_responsive.css' %}"> -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/main_styles.css' %}">
+
+    
+<style>
+    input[type=text], input[type=password] {
+            width: 400px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+}
+         button {
+            background-color: green;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 400px;
+}
+        .button:hover {
+            opacity: 0.8;
+}
+        .psw{
+            padding-left: 160px;
+            
+}
+        .container{
+            color:white;
+        }
+    
+</style>
+</head>
+<body>
+
+<div class="super_container">
+
+    <!-- Header -->
+  
+    <header class="header d-flex flex-row">
+      <div class="header_content d-flex flex-row align-items-center">
+        <!-- Logo -->
+        <div class="logo_container">
+          <div class="logo">
+            <img src="{% static 'css/images/logo.png' %}" alt="">
+  
+            <span>Book an Appointment</span>
+          </div>
+        </div>
+  
+        <!-- Main Navigation -->
+        <nav class="main_nav_container">
+          <div class="main_nav">
+            <ul class="main_nav_list">
+              <div class="row">
+  
+              <li  style="margin-top:50px;"class="main_nav_item"><a href={% url 'home' %}>home</a></li>
+              {% if user.is_authenticated %}
+              
+                <!-- <li class="main_nav_item"><a href="{% url 'password_change' %}">change password</a></li>							
+                <li class="main_nav_item"><a href="{% url 'logout' %}">Log Out</a></li> -->
+                <!-- <strong style="color:teal;">Your logged in as {{user.username}}</strong> -->
+                <li class="nav-item dropdown" style="padding-left:600px; padding-bottom:40px;">
+                    <a  style="background-color: navy; color: rgb(185, 166, 166); border: 1px solid #008CBA;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      {{user.username}}
+                    </a>
+                    <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{% url 'password_change' %}">change password</a>									  <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="{% url 'logout' %}">Log Out</a>
+                    </div>
+                    </li>
+  
+              {% else %}
+                <li class="main_nav_item"><a href="#contacts">Contact Us</a></li>
+                  <li class="main_nav_item"><a href="#signup">Sign Up</a></li>
+                <li class="main_nav_item"><a href="#login">Log In</a></li>
+            
+              {% endif %}
+            </ul>
+            
+          </div>
+        </nav>
+      </div>
+  
+      
+      <div class="header_side d-flex flex-row justify-content-center align-items-center">
+        <img src="{% static 'css/images/phone-call.svg' %}" alt="">
+        <span>+43 4566 7788 2457</span>
+      </div>
+  
+      <!-- Hamburger -->
+      <div class="hamburger_container">
+        <i class="fas fa-bars trans_200"></i>
+      </div>
+  
+    </header>
+	
+
+	<div style="padding-bottom:0px;"class="home">
+		<div class="home_background_container prlx_parent">
+			<div class="home_background prlx">
+    <img style="height:600px;width:100%;"src="{% static 'css/images/doctor.jpg' %}">
+  </div>
+		</div>
+	</div>
+
+<div style="padding-down:50px;margin:50px;text-align: center;background-color: black;color:white;"class='jumbotron'>
+<h1>Doctors!</h1>
+<h2>Click here to know the details of your patients!</h2>
+<a href="/doctormap/" class="btn btn-primary">Know</a>
+</div>
+
+    <div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+     <img style="height: 500px;margin-top: 0px;margin-right: 500px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx2YgiFI0zpso9DKLspUT3fyMWm5rbRfbS1rIYdF8dzlhr95hQqA">
+    </div>
+    
+    <div class="col-lg-6" style="background-color:black;height: 500px;padding-top: 50px;margin-top: 10px;">
+     <form encrypt= "multipart/form-data" method="post" action="/newentry/">
+      {% csrf_token %}
+         
+
+      <div class="container">
+        <label for="first_name"><b>First Name</b></label><br>
+        <input type="text" placeholder="Enter First name" name="fname" required><br>
+          
+        <label for="last_name"><b>Last Name</b></label><br>
+        <input type="text" placeholder="Enter Last name" name="lname" required><br>
+
+        <label for="email"><b>Email</b></label><br>
+        <input type="text" placeholder="Enter your email id" name="email" required><br>
+
+        <label for="contact"><b>Contact</b></label><br>
+        <input type="text" placeholder="Enter contact" name="contact" required><br>
+        <br>
+         <div  style="padding-left: 100px;"class="container">
+            <input class="btn btn-success" type="submit" value="Book an Appointment">
+         </div>
+        
+        
+    
+      
+      
+  </div>
+</form>
+    </div>
+  </div>
+</div>
+
+	
+	<!-- Footer -->
+
+
+</div>
+
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'js/ScrollMagic.min.js' %}"></script>
+<script src="{% static 'js/owlcarousel.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+<script src="{% static 'js/popper.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+</html>

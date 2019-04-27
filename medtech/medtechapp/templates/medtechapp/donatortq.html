@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Home Remedies</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Course Project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrapmin.css' %}">
+<link href="{% static 'css/fontawesomeall.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/owlcarousel.css'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/main_styles.css' %}">
+
+<style>
+
+            
+        
+                        .tq{
+                            padding-left: 150px;
+                            font-family: cursive;
+                        }
+            
+                         .token{
+                            text-align: center;
+                            font-family:sans-serif;
+                        }
+                        #im{
+                            height:460px;
+                            padding-left:300px;
+                        }
+                        h1{
+                            text-align: center;
+                        }
+                   
+</style> 
+    
+</head>
+<body>
+
+
+    <div class="super_container">
+
+        <!-- Header -->
+        <header class="header d-flex flex-row">
+                <div class="header_content d-flex flex-row align-items-center">
+                    <!-- Logo -->
+                    <div class="logo_container">
+                        <div class="logo">
+                            <img src="{% static 'css/images/logo.png' %}" alt="">
+        
+                            <span>medtech</span>
+                        </div>
+                    </div>
+        
+                    <!-- Main Navigation -->
+                    <nav class="main_nav_container">
+                        <div class="main_nav">
+                            <ul class="main_nav_list">
+        
+                                <li class="main_nav_item"><a href="{% url 'home' %}">home</a></li>
+                             
+                                    
+                                    <!-- <li class="main_nav_item"><a href="#services">Services</a></li> -->
+                                    <!-- <li class="main_nav_item"><a href="{% url 'password_change' %}">change password</a></li>							
+                                    <li class="main_nav_item"><a href="{% url 'logout' %}">Log Out</a></li> -->
+                                    <!-- <strong style="color:teal;">Your logged in as {{user.username}}</strong> -->
+                                    <li class="nav-item dropdown" style="padding-left:600px;">
+                                        <a style="background-color: navy; color: white; border: 2px solid #008CBA;"class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                              {{user.username}}
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
+                                              <a class="dropdown-item" href="{% url 'password_change' %}">change password</a>									  <div class="dropdown-divider"></div>
+                                              <a class="dropdown-item" href="{% url 'logout' %}">Log Out</a>
+                                            </div>
+                                          </li>
+        
+                            </ul>
+                            
+                        </div>
+                    </nav>
+                </div>
+        
+                
+                <div class="header_side d-flex flex-row justify-content-center align-items-center">
+                    <img src="{% static 'css/images/phone-call.svg' %}" alt="">
+                    <span>+43 4566 7788 2457</span>
+                </div>
+        
+                <!-- Hamburger -->
+                <div class="hamburger_container">
+                    <i class="fas fa-bars trans_200"></i>
+                </div>
+        
+            </header>
+        
+        <!-- Menu -->
+        <div class="menu_container menu_mm">
+      
+          <!-- Menu Close Button -->
+          <div class="menu_close_container">
+            <div class="menu_close"></div>
+          </div>
+      
+          <!-- Menu Items -->
+      
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+<h1 style="color:green;font-size:40px;text-align: center;">Thanks for Donation</h1>
+<h1 style="color:green;font-size:40px;text-align: center;">Now You can logout your account</h1>
+<img id="im" src="{% static 'css/images/tickmark4.jpg' %}">
+
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'js/ScrollMagic.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+<script src="{% static 'js/popper.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+</html>

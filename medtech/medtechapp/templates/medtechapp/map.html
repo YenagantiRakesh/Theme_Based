@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    label{
+      font-size: 30px;
+    }
+    input{
+      font-size:20px;
+      width:300px;
+    }
+    h1{
+      background-color: teal;
+      text-align:center;
+      color:white;
+    }
+    .hosp{
+      /* padding-left:0px;
+      padding-top:10px;
+      background:rgba(0,0,0,0.25); */
+
+      width:300px;
+      height:230px;
+      background:rgba(0,0,0,0.5);
+      margin:0 auto;
+      margin-top:40px;
+      padding-top:50px;
+      /* padding-left:180px; */
+      color:white;
+      font-weight:bolder;
+      text-align: center;
+                
+
+    }
+    a{
+      padding-left:10px;
+      padding-top:0px;
+      font-size: 30px;
+      color:white;
+    }
+    #hosp1{
+      background:url(http://pluspng.com/img-png/hospital-png-hd-images-hospital-management-system-1920.png);
+      background-size:600px 360px;
+      padding-left:140px;
+      padding-right:600px;
+      background-repeat:no-repeat;
+      
+    }
+    #hosp2{
+      padding-left:300px;
+      /* background-color:skyblue; */
+    }
+    
+    </style>
+</head>
+<body>
+
+<h1>Near by Hospitals</h1>
+<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d121817.82743496707!2d78.3694655069443!3d17.421042254012384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1snear+by+hospitals+hyderabad!5e0!3m2!1sen!2sus!4v1553606037580" width="1350" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+<div id="hosp2">
+<div id="hosp1">
+<div class='hosp'>
+  <p>{{ newentrydata }}</p>
+  <form class="contact form" method="post" action="/map/{{newentrydata.id}}/">
+    {% csrf_token %}
+    <label name="kname"><b>Hospital Name:   </b></label>
+    <input type="text" placeholder="Enter Your hosiptal name" name="hname" required><br><br><br>
+    <input class="btn btn-primary" type="submit" value="Search">
+    </form>
+</div>
+</div>
+</div>
+
+
+
+      
+
+
+</body>
+</html>
